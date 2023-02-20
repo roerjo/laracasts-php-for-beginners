@@ -1,4 +1,0 @@
-There was no code changes in:
-- Lesson 1
-- Lesson 2
-- Lesson 11

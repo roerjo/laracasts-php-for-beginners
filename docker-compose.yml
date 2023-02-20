@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - phpForBeginners:/var/lib/mysql
+    ports:
+      - 3001:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=phpForBeginners
+
+volumes:
+  phpForBeginners:
