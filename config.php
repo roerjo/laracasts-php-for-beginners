@@ -8,7 +8,7 @@ return [
         // https://stackoverflow.com/a/31414252
         'host' => '127.0.0.1',
         'port' => '3001',
-        'dbname' => 'phpForBeginners',
+        'dbname' => 'notes',
         'charset' => 'utf8mb4',
         'username' => 'root',
         'password' => 'secret',
