@@ -8,6 +8,8 @@ $config = require('config.php');
 
 $db = new Database($config['database']);
 
-$posts = $db->query('select * from posts')->fetchAll();
+$id = $_GET['id'];
+
+$posts = $db->query('select * from posts where id = ?', [$id])->fetchAll();
 
 dd($posts);
