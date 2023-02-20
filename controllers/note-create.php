@@ -1,6 +1,8 @@
 <?php
 
-$config = require('config.php');
+require 'Validator.php';
+
+$config = require 'config.php';
 $db = new Database($config['database']);
 
 $heading = "Create A Note";
@@ -8,13 +10,8 @@ $heading = "Create A Note";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errors = [];
 
-
-    if (empty($_POST['body'])) {
-        $errors['body'] = 'A body is required';
-    }
-
-    if (strlen($_POST['body']) > 45) {
-        $errors['body'] = 'Body cannot be longer than 45 characters';
+    if (! Validator::string($_POST['body'], 1, 45)) {
+        $errors['body'] = 'A body of no more than 1000 characters is required';
     }
 
     if (empty($errors)) {
